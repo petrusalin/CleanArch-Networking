@@ -33,7 +33,10 @@ public final class PostsViewModel: ObservableObject, LoadableStateViewModel {
     
     /// Function that does the loading
     public func load() {
+        guard !self.state.isLoading else { return }
+        
         self.state = .loading
+        
         Task {
             do {
                 let posts = try await self.repository.requestPosts()

@@ -44,7 +44,9 @@ struct LoadStateView<ViewModel: LoadableStateViewModel, Content: View>: View {
     
     private func idleView() -> some View {
         content()
-            .onAppear(perform: viewModel.load)
+            .task {
+                viewModel.load()
+            }
     }
     
     private func errorView(error: LocalizedError) -> some View {

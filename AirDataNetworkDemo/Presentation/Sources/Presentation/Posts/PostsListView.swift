@@ -25,9 +25,6 @@ public struct PostsListView: View {
                 }
             }
         }
-        .task {
-            viewModel.load()
-        }
     }
 
     public init(viewModel: PostsViewModel) {
