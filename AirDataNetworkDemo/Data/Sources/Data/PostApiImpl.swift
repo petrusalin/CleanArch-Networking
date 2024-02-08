@@ -10,7 +10,7 @@ import AirDataNetwork
 import Models
 
 public class PostsAPIImpl: PostAPI {
-    let networkEngine: NetworkEngine
+    private let networkEngine: NetworkEngine
     
     public init(networkEngine: NetworkEngine = NetworkEngineImpl(basePath: "https://jsonplaceholder.typicode.com")) {
         self.networkEngine = networkEngine
