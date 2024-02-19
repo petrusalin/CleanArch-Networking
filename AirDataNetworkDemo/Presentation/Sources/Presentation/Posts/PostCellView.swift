@@ -24,6 +24,11 @@ struct PostCellView: View {
                 Spacer()
             }
         }
+        .padding()
+        .overlay(
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(.green, lineWidth: 5)
+        )
     }
     
     init(post: PostEntity) {

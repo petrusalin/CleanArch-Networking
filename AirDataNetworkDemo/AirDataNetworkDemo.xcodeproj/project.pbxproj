@@ -85,6 +85,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A4726082B834B39001D8357 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				6AB23F472B5AC02B0010BE00 /* AirDataNetworkDemoApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		6AB23F3B2B5AC02B0010BE00 = {
 			isa = PBXGroup;
 			children = (
@@ -110,12 +118,12 @@
 		6AB23F462B5AC02B0010BE00 /* AirDataNetworkDemo */ = {
 			isa = PBXGroup;
 			children = (
+				6A4726082B834B39001D8357 /* App */,
 				6AE1C4582B5E56DF0085962F /* Domain */,
 				6A97A3672B5ADA7000FB148E /* Models */,
 				6AA50CB12B5AD625001B879A /* Presentation */,
 				6A60827A2B5E5DB5005C0ECB /* Data */,
 				6A97A3602B5AD9AB00FB148E /* Info.plist */,
-				6AB23F472B5AC02B0010BE00 /* AirDataNetworkDemoApp.swift */,
 				6AB23F4B2B5AC02D0010BE00 /* Assets.xcassets */,
 				6AB23F4D2B5AC02D0010BE00 /* Preview Content */,
 			);
