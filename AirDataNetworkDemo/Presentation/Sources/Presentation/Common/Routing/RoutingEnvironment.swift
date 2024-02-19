@@ -9,11 +9,11 @@ import Foundation
 import SwiftUI
 
 public struct RoutingCoordinatorKey: EnvironmentKey {
-    public static var defaultValue: RoutingCoordinator?
+    public static var defaultValue: MainRoutingCoordinator?
 }
 
 public extension EnvironmentValues {
-    var coordinator: RoutingCoordinator? {
+    var coordinator: MainRoutingCoordinator? {
         get { self[RoutingCoordinatorKey.self] }
         set { self[RoutingCoordinatorKey.self] = newValue }
     }

@@ -10,11 +10,22 @@ import Foundation
 
 public enum Route: Hashable {
     case Posts(Post)
+    case Account(AccountSettings)
 }
 
 public extension Route {
+    
     enum Post: Hashable {
         case detail(post: PostEntity)
         case dummy
+    }
+    
+}
+
+public extension Route {
+    
+    enum AccountSettings: Hashable {
+        case profile
+        case security
     }
 }
