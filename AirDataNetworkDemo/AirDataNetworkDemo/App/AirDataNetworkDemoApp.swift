@@ -11,7 +11,6 @@ import Presentation
 
 @main
 struct AirDataNetworkDemoApp: App {
-    @State var path: NavigationPath = NavigationPath()
     
     var body: some Scene {
         WindowGroup {
@@ -19,7 +18,7 @@ struct AirDataNetworkDemoApp: App {
 //            PostsListView(viewModel: PostsViewModel(repository: StaticPostRepository()))
                 PostsListView(viewModel: PostsViewModel(repository: RemotePostRepository()))
                     .navigationWithTitle("Posts")
-                    .register(coordinator: MainRoutingCoordinator(path: self.$path))
+                    .register(router: Router(navigationPath: NavigationPath()), factory: PostsViewFactory())
                     .tint(.white)
         }
     }

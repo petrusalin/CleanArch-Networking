@@ -10,7 +10,7 @@ import SwiftUI
 
 public struct PostDetailsView: View {
     @ObservedObject var postViewModel: PostDetailsViewModel
-    @Environment(\.coordinator) var coordinator
+    @EnvironmentObject var router: Router<Route.Posts>
     
     public var body: some View {
         VStack {
@@ -34,11 +34,11 @@ public struct PostDetailsView: View {
             Spacer()
                 .frame(height: 50)
             Button("Pop") {
-                self.coordinator?.pop()
+                self.router.pop()
             }
             .tint(.orange)
             Button("Dummy") {
-                self.coordinator?.push(route: .Posts(.dummy))
+                self.router.push(route: .dummy)
             }
             .tint(.orange)
             Spacer()

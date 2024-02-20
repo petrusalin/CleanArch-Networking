@@ -7,10 +7,11 @@
 
 import SwiftUI
 
-struct PostsViewFactory: ViewFactory {
+public struct PostsViewFactory: ViewFactory {
     
+    public init() {}
     @ViewBuilder
-    func view(forRoute route: Route.Post) -> some View {
+    public func view(forRoute route: Route.Posts) -> some View {
         switch route {
         case .detail(let post):
             PostDetailsView(viewModel: PostDetailsViewModel(postEntity: post))

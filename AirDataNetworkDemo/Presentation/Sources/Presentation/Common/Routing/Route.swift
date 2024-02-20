@@ -8,18 +8,23 @@
 import Domain
 import Foundation
 
-public enum Route: Identifiable, Hashable {
-    case Posts(Post)
-    case Account(AccountSettings)
+public enum Route {}
+
+public extension Route {
     
-    public var id: Self {
-        return self
+    enum Tabs: Identifiable, Hashable {
+        case posts
+        case account
+        
+        public var id: Self {
+            return self
+        }
     }
 }
 
 public extension Route {
     
-    enum Post: Identifiable, Hashable {
+    enum Posts: Identifiable, Hashable {
         case detail(post: PostEntity)
         case dummy
         

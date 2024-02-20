@@ -36,5 +36,257 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "70ECF7FF-743C-404B-9F6D-E3A1764D1D5B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Presentation/Sources/Presentation/Common/ViewFactory/PostsViewFactory.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "view(forRoute:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "70ECF7FF-743C-404B-9F6D-E3A1764D1D5B - d598d2d7a459fc9b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Presentation.PostsViewFactory.view(forRoute: Presentation.Route.Post) -&gt; some"
+                  moduleName = "AirDataNetworkDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alin.petrus/Projects/GHP/AirDataNetworkDemo/Presentation/Sources/Presentation/Common/ViewFactory/PostsViewFactory.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "532">
+               </Location>
+               <Location
+                  uuid = "70ECF7FF-743C-404B-9F6D-E3A1764D1D5B - d598d2d7a459fc9b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Presentation.PostsViewFactory.view(forRoute: Presentation.Route.Post) -&gt; some"
+                  moduleName = "AirDataNetworkDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alin.petrus/Projects/GHP/AirDataNetworkDemo/Presentation/Sources/Presentation/Common/ViewFactory/PostsViewFactory.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "780">
+               </Location>
+               <Location
+                  uuid = "70ECF7FF-743C-404B-9F6D-E3A1764D1D5B - d598d2d7a459fcb8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Presentation.PostsViewFactory.view(forRoute: Presentation.Route.Post) -&gt; some"
+                  moduleName = "AirDataNetworkDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alin.petrus/Projects/GHP/AirDataNetworkDemo/Presentation/Sources/Presentation/Common/ViewFactory/PostsViewFactory.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "780">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CF2421BF-ACF1-4464-B308-44390E31A334"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Presentation/Sources/Presentation/Common/ViewFactory/PostsViewFactory.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "view(forRoute:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CF2421BF-ACF1-4464-B308-44390E31A334 - d598d2d7a459c359"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Presentation.PostsViewFactory.view(forRoute: Presentation.Route.Post) -&gt; some"
+                  moduleName = "AirDataNetworkDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alin.petrus/Projects/GHP/AirDataNetworkDemo/Presentation/Sources/Presentation/Common/ViewFactory/PostsViewFactory.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "780">
+               </Location>
+               <Location
+                  uuid = "CF2421BF-ACF1-4464-B308-44390E31A334 - d598d2d7a459c359"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Presentation.PostsViewFactory.view(forRoute: Presentation.Route.Post) -&gt; some"
+                  moduleName = "AirDataNetworkDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alin.petrus/Projects/GHP/AirDataNetworkDemo/Presentation/Sources/Presentation/Common/ViewFactory/PostsViewFactory.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "988">
+               </Location>
+               <Location
+                  uuid = "CF2421BF-ACF1-4464-B308-44390E31A334 - d598d2d7a459c376"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Presentation.PostsViewFactory.view(forRoute: Presentation.Route.Post) -&gt; some"
+                  moduleName = "AirDataNetworkDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alin.petrus/Projects/GHP/AirDataNetworkDemo/Presentation/Sources/Presentation/Common/ViewFactory/PostsViewFactory.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "988">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "487B5450-EEF1-493A-976A-8AEEBEAEE1C2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Presentation/Sources/Presentation/Common/Routing/Router.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "popToRoot()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4B6FF93E-9C87-489A-99BF-E6F191331FD2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Presentation/Sources/Presentation/Common/Routing/Router.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "Router"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C3B044A3-CD34-4B60-B4FC-C47BBC931F08"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Presentation/Sources/Presentation/Common/Routing/Router.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "403157CE-CE9A-4665-82C2-FA45DA668FC8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Presentation/Sources/Presentation/Common/Routing/Router.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "popToRoot()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1B5F43CB-D208-45EB-A89E-BED72D61FFC3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Presentation/Sources/Presentation/Common/ViewFactory/PostsViewFactory.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "view(forRoute:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1B5F43CB-D208-45EB-A89E-BED72D61FFC3 - d598d2d7a459fcdd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Presentation.PostsViewFactory.view(forRoute: Presentation.Route.Post) -&gt; some"
+                  moduleName = "AirDataNetworkDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alin.petrus/Projects/GHP/AirDataNetworkDemo/Presentation/Sources/Presentation/Common/ViewFactory/PostsViewFactory.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "404">
+               </Location>
+               <Location
+                  uuid = "1B5F43CB-D208-45EB-A89E-BED72D61FFC3 - d598d2d7a459fcdd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Presentation.PostsViewFactory.view(forRoute: Presentation.Route.Post) -&gt; some"
+                  moduleName = "AirDataNetworkDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alin.petrus/Projects/GHP/AirDataNetworkDemo/Presentation/Sources/Presentation/Common/ViewFactory/PostsViewFactory.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "428">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "17C35B96-BB46-44D3-ABA1-835DEB3A53AA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Presentation/Sources/Presentation/Common/ViewFactory/PostsViewFactory.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "view(forRoute:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -9,7 +9,7 @@ import Domain
 import SwiftUI
 
 public struct PostsListView: View {
-    @Environment(\.coordinator) var coordinator
+    @EnvironmentObject var router: Router<Route.Posts>
     @ObservedObject private var viewModel: PostsViewModel
     
     public var body: some View {
@@ -19,7 +19,7 @@ public struct PostsListView: View {
                     ForEach(viewModel.posts) { post in
                         PostCellView(post: post)
                             .onTapGesture {
-                                self.coordinator?.push(route: .Posts(.detail(post: post)))
+                                self.router.push(route: .detail(post: post))
                             }
                     }
                     .padding()
