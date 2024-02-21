@@ -35,6 +35,13 @@ public struct PostsListView: View {
                     Image(systemName: "plus.circle.fill")
                 }
             }
+            ToolbarItem(placement: .topBarLeading) {
+                Button {
+                    self.coordinator.go(to: .account)
+                } label: {
+                    Image(systemName: "person.crop.circle.fill")
+                }
+            }
         }
     }
     
