@@ -41,6 +41,7 @@ public extension Route {
 public extension Route {
     
     enum AccountSettings: Routable {
+        case main
         case profile
         case security
         

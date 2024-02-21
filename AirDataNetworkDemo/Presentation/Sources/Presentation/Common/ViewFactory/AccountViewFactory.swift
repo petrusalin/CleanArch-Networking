@@ -12,10 +12,20 @@ public struct AccountViewFactory: ViewFactory {
     @ViewBuilder
     public func view(forRoute route: Route.AccountSettings) -> some View {
         switch route {
+        case .main:
+            AccountView()
         case .profile:
-            EmptyView()
+            VStack {
+                Spacer()
+                Text("Profile")
+                Spacer()
+            }
         case .security:
-            EmptyView()
+            VStack {
+                Spacer()
+                Text("Security")
+                Spacer()
+            }
         }
     }
     
