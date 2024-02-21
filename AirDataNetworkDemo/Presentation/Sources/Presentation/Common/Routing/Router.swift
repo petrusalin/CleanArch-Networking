@@ -1,34 +1,18 @@
 //
 //  Router.swift
-//  
 //
-//  Created by Alin Petrus on 20.02.2024.
+//
+//  Created by Alin Petrus on 21.02.2024.
 //
 
 import Foundation
-import SwiftUI
 
-public class Router<Route: Hashable & Identifiable>: StackRouter, ModalRouter, ObservableObject {
-    public typealias NavigationRoute = Route
+public protocol Router<NavigationRoute>: ObservableObject {
+    associatedtype NavigationRoute: Routable
     
-    @Published public var navigationPath: NavigationPath
-    @Published public var sheetRoute: Route?
+    func go(to route: NavigationRoute)
     
-    public init(navigationPath: NavigationPath) {
-        self.navigationPath = navigationPath
-    }
+    func goBack()
     
-    public func go(to route: Route) {
-        self.push(route: route)
-    }
-    
-    public func goBack() {
-        self.pop()
-    }
-    
-    public func reset() {
-        self.dismiss()
-        self.popToRoot()
-    }
-    
+    func reset()
 }

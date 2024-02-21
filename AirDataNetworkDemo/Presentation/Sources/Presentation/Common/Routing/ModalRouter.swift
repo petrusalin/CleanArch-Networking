@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol ModalRouter<NavigationRoute>: ObservableObject {
-    associatedtype NavigationRoute: Hashable & Identifiable
+    associatedtype NavigationRoute: Routable
     
     var sheetRoute: NavigationRoute? { get set }
     

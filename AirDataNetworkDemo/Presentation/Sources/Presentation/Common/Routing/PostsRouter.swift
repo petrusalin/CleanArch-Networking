@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-public class PostsRouter: Router<Route.Posts> {
+public final class PostsRouter: ConcreteRouter<Route.Posts> {
     
     public convenience init() {
         self.init(navigationPath: NavigationPath())

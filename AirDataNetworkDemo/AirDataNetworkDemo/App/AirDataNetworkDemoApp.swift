@@ -18,7 +18,7 @@ struct AirDataNetworkDemoApp: App {
 //            PostsListView(viewModel: PostsViewModel(repository: StaticPostRepository()))
                 PostsListView(viewModel: PostsViewModel(repository: RemotePostRepository()))
                     .navigationWithTitle("Posts")
-                    .register(router: PostsRouter(), factory: PostsViewFactory())
+                    .register(routingPair: RoutingPairProvider.postsPair())
                     .tint(.white)
         }
     }

@@ -8,11 +8,13 @@
 import Domain
 import Foundation
 
+public typealias Routable = Identifiable & Hashable
+
 public enum Route {}
 
 public extension Route {
     
-    enum Tabs: Identifiable, Hashable {
+    enum Flow: Routable {
         case posts
         case account
         
@@ -24,7 +26,7 @@ public extension Route {
 
 public extension Route {
     
-    enum Posts: Identifiable, Hashable {
+    enum Posts: Routable {
         case add
         case detail(post: PostEntity)
         case dummy
@@ -38,7 +40,7 @@ public extension Route {
 
 public extension Route {
     
-    enum AccountSettings: Identifiable, Hashable {
+    enum AccountSettings: Routable {
         case profile
         case security
         

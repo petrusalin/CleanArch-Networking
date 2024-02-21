@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DummyView: View {
-    @EnvironmentObject var router: Router<Route.Posts>
+    @EnvironmentObject var coordinantor: Coordinator<Route.Posts>
     
     var body: some View {
         VStack {
@@ -16,7 +16,7 @@ struct DummyView: View {
             HStack {
                 Spacer()
                 Button("Pop to Root") {
-                    self.router.popToRoot()
+                    self.coordinantor.reset()
                 }
                 .tint(.orange)
                 Spacer()

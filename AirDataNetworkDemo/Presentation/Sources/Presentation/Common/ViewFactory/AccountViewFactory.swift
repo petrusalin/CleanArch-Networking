@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct AccountViewFactory: ViewFactory {
+public struct AccountViewFactory: ViewFactory {
     
     @ViewBuilder
-    func view(forRoute route: Route.AccountSettings) -> some View {
+    public func view(forRoute route: Route.AccountSettings) -> some View {
         switch route {
         case .profile:
             EmptyView()

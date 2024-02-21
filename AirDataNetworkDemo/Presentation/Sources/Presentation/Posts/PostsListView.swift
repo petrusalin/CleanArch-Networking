@@ -9,7 +9,7 @@ import Domain
 import SwiftUI
 
 public struct PostsListView: View {
-    @EnvironmentObject var router: Router<Route.Posts>
+    @EnvironmentObject var coordinator: Coordinator<Route.Posts>
     @ObservedObject private var viewModel: PostsViewModel
     
     public var body: some View {
@@ -19,7 +19,7 @@ public struct PostsListView: View {
                     ForEach(viewModel.posts) { post in
                         PostCellView(post: post)
                             .onTapGesture {
-                                self.router.go(to: .detail(post: post))
+                                self.coordinator.go(to: .detail(post: post))
                             }
                     }
                     .padding()
@@ -30,7 +30,7 @@ public struct PostsListView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
-                    self.router.go(to: .add)
+                    self.coordinator.go(to: .add)
                 } label: {
                     Image(systemName: "plus.circle.fill")
                 }

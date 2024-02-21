@@ -9,7 +9,7 @@ import SwiftUI
 import Foundation
 
 public protocol StackRouter<NavigationRoute>: ObservableObject {
-    associatedtype NavigationRoute: Hashable & Identifiable
+    associatedtype NavigationRoute: Routable
     
     var navigationPath: NavigationPath { get set }
     
