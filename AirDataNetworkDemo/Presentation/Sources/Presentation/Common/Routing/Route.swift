@@ -30,7 +30,6 @@ public extension Route {
         case add
         case detail(post: PostEntity)
         case dummy
-        case account
         
         public var id: Self {
             return self

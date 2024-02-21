@@ -9,23 +9,17 @@ import SwiftUI
 
 public struct AccountViewFactory: ViewFactory {
     
+    public init() {}
+    
     @ViewBuilder
     public func view(forRoute route: Route.AccountSettings) -> some View {
         switch route {
         case .main:
             AccountView()
         case .profile:
-            VStack {
-                Spacer()
-                Text("Profile")
-                Spacer()
-            }
+            ProfileView()
         case .security:
-            VStack {
-                Spacer()
-                Text("Security")
-                Spacer()
-            }
+            SecurityView()
         }
     }
     

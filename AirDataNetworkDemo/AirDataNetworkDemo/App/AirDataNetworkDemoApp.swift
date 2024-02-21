@@ -14,12 +14,27 @@ struct AirDataNetworkDemoApp: App {
     
     var body: some Scene {
         WindowGroup {
-            // Glue things up, decide where the data comes from, pass it to the presentation
-//            PostsListView(viewModel: PostsViewModel(repository: StaticPostRepository()))
-                PostsListView(viewModel: PostsViewModel(repository: RemotePostRepository()))
-                    .navigationWithTitle("Posts")
-                    .register(routingPair: RoutingPairProvider.postsPair())
-                    .tint(.white)
+            TabView {
+                Group {
+                    PostsListView(viewModel: PostsViewModel(repository: RemotePostRepository()))
+                        .navigationWithTitle("Posts")
+                        .register(routingPair: RoutingPairProvider.postsPair())
+                        .tint(.white)
+                        .tabItem {
+                            Label("Posts", systemImage: "list.bullet.clipboard.fill")
+                        }
+                    AccountViewFactory().view(forRoute: .main)
+                        .navigationTitle("Account")
+                        .register(routingPair: RoutingPairProvider.accountsPair())
+                        .tint(.white)
+                        .tabItem {
+                            Label("Account", systemImage: "person.crop.circle")
+                        }
+                }
+                .toolbarBackground(.orange, for: .tabBar)
+                .toolbarBackground(.visible, for: .tabBar)
+            }
+            .tint(.white)
         }
     }
 }

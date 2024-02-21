@@ -15,7 +15,7 @@ public final class PostsRouter: ConcreteRouter<Route.Posts> {
     }
     
     public override func go(to route: Route.Posts) {
-        if route == .add || route == .account {
+        if route == .add {
             self.sheetRoute = route
         } else {
             self.push(route: route)

@@ -22,9 +22,6 @@ public struct PostsViewFactory: ViewFactory {
             NavigationStack {
                 AddPostView()
             }
-        case .account:
-            AccountViewFactory().view(forRoute: .main)
-                .register(routingPair: RoutingPairProvider.accountsPair())
         }
     }
     
