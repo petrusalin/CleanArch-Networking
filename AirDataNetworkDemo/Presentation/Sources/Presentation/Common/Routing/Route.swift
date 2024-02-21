@@ -25,6 +25,7 @@ public extension Route {
 public extension Route {
     
     enum Posts: Identifiable, Hashable {
+        case add
         case detail(post: PostEntity)
         case dummy
         

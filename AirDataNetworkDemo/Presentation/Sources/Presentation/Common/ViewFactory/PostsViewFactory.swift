@@ -10,6 +10,7 @@ import SwiftUI
 public struct PostsViewFactory: ViewFactory {
     
     public init() {}
+    
     @ViewBuilder
     public func view(forRoute route: Route.Posts) -> some View {
         switch route {
@@ -17,6 +18,10 @@ public struct PostsViewFactory: ViewFactory {
             PostDetailsView(viewModel: PostDetailsViewModel(postEntity: post))
         case .dummy:
             DummyView()
+        case .add:
+            NavigationStack {
+                AddPostView()
+            }
         }
     }
     

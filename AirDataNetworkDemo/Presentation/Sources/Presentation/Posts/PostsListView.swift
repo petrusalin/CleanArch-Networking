@@ -19,7 +19,7 @@ public struct PostsListView: View {
                     ForEach(viewModel.posts) { post in
                         PostCellView(post: post)
                             .onTapGesture {
-                                self.router.push(route: .detail(post: post))
+                                self.router.go(to: .detail(post: post))
                             }
                     }
                     .padding()
@@ -27,6 +27,15 @@ public struct PostsListView: View {
             }
         }
         .tint(.orange)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    self.router.go(to: .add)
+                } label: {
+                    Image(systemName: "plus.circle.fill")
+                }
+            }
+        }
     }
     
     public init(viewModel: PostsViewModel) {

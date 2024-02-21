@@ -9,11 +9,26 @@ import SwiftUI
 import Foundation
 
 public protocol StackRouter<NavigationRoute>: ObservableObject {
-    associatedtype NavigationRoute: Hashable
+    associatedtype NavigationRoute: Hashable & Identifiable
     
     var navigationPath: NavigationPath { get set }
     
     func push(route: NavigationRoute)
     func pop()
     func popToRoot()
+}
+
+public extension StackRouter {
+    
+    func push(route: NavigationRoute) {
+        self.navigationPath.append(route)
+    }
+    
+    func pop() {
+        self.navigationPath.removeLast()
+    }
+    
+    func popToRoot() {
+        self.navigationPath = NavigationPath()
+    }
 }

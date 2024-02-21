@@ -26,12 +26,12 @@ private struct RouterView<Router: StackRouter, Content: View>: View {
     }
 }
 
-private struct Coordinator<Router: StackRouter, Factory: ViewFactory>: ViewModifier {
-    private let router: Router
+private struct RouterRegistrar<Route: Hashable & Identifiable, Factory: ViewFactory<Route>>: ViewModifier {
+    @ObservedObject var router: Router<Route>
     private let viewFactory: Factory
     
-    public init(router: Router, 
-                viewFactory: Factory) where Router.NavigationRoute == Factory.NavigationRoute {
+    public init(router: Router<Route>,
+                viewFactory: Factory) {
         self.router = router
         self.viewFactory =  viewFactory
     }
@@ -43,11 +43,14 @@ private struct Coordinator<Router: StackRouter, Factory: ViewFactory>: ViewModif
                 self.viewFactory.view(forRoute: route)
             }
         }
+        .sheet(item: self.$router.sheetRoute) { route in
+            self.viewFactory.view(forRoute: route)
+        }
     }
 }
 
 public extension View {
-    func register<Router: StackRouter, Factory: ViewFactory>(router: Router, factory: Factory) -> some View where Router.NavigationRoute == Factory.NavigationRoute {
-        modifier(Coordinator(router: router, viewFactory: factory))
+    func register<Route: Hashable & Identifiable, Factory: ViewFactory<Route>>(router: Router<Route>, factory: Factory) -> some View {
+        modifier(RouterRegistrar(router: router, viewFactory: factory))
     }
 }
