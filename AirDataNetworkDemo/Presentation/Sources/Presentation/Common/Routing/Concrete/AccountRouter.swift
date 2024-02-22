@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import Routing
 import SwiftUI
 
-public final class AccountRouter: ConcreteRouter<Route.AccountSettings> {
+public final class AccountRouter: CompositeRouter<Route.AccountSettings> {
     
-    public convenience init() {
-        self.init(navigationPath: NavigationPath())
+    convenience public init() {
+        self.init(stackRouter: StackRouter(), modalRouter: ModalRouter())
     }
     
 }

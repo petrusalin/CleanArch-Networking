@@ -2,15 +2,15 @@
 //  ViewFactory.swift
 //
 //
-//  Created by Alin Petrus on 19.02.2024.
+//  Created by Alin Petrus on 22.02.2024.
 //
 
-import SwiftUI
 import Foundation
+import SwiftUI
 
 public protocol ViewFactory<NavigationRoute> {
     associatedtype ContentView: View
-    associatedtype NavigationRoute: Hashable
+    associatedtype NavigationRoute: Routable
     
     func view(forRoute route: NavigationRoute) -> ContentView
 }

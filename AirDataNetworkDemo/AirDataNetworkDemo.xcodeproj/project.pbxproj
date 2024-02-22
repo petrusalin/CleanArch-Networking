@@ -18,6 +18,7 @@
 		6AB23F592B5AC02E0010BE00 /* AirDataNetworkDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB23F582B5AC02E0010BE00 /* AirDataNetworkDemoTests.swift */; };
 		6AB23F632B5AC02E0010BE00 /* AirDataNetworkDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB23F622B5AC02E0010BE00 /* AirDataNetworkDemoUITests.swift */; };
 		6AB23F652B5AC02E0010BE00 /* AirDataNetworkDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB23F642B5AC02E0010BE00 /* AirDataNetworkDemoUITestsLaunchTests.swift */; };
+		6AC088542B879C9E0098852A /* Routing in Frameworks */ = {isa = PBXBuildFile; productRef = 6AC088532B879C9E0098852A /* Routing */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		6AB23F5E2B5AC02E0010BE00 /* AirDataNetworkDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirDataNetworkDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AB23F622B5AC02E0010BE00 /* AirDataNetworkDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirDataNetworkDemoUITests.swift; sourceTree = "<group>"; };
 		6AB23F642B5AC02E0010BE00 /* AirDataNetworkDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirDataNetworkDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6AC088522B8753DB0098852A /* Routing */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Routing; path = ../Routing; sourceTree = "<group>"; };
 		6AE1C4582B5E56DF0085962F /* Domain */ = {isa = PBXFileReference; lastKnownFileType = text; path = Domain; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -63,6 +65,7 @@
 				6A97A3692B5ADA8700FB148E /* Models in Frameworks */,
 				6A4ACF7E2B5ADE9500EB4343 /* AirDataNetwork in Frameworks */,
 				6A60827C2B5E5DF3005C0ECB /* Data in Frameworks */,
+				6AC088542B879C9E0098852A /* Routing in Frameworks */,
 				6A97A3662B5AD9C200FB148E /* Presentation in Frameworks */,
 				6A97A3642B5AD9C200FB148E /* Domain in Frameworks */,
 			);
@@ -96,6 +99,7 @@
 		6AB23F3B2B5AC02B0010BE00 = {
 			isa = PBXGroup;
 			children = (
+				6AC088522B8753DB0098852A /* Routing */,
 				6A4ACF7C2B5ADE8B00EB4343 /* AirDataNetwork */,
 				6AB23F462B5AC02B0010BE00 /* AirDataNetworkDemo */,
 				6AB23F572B5AC02E0010BE00 /* AirDataNetworkDemoTests */,
@@ -184,6 +188,7 @@
 				6A97A3682B5ADA8700FB148E /* Models */,
 				6A4ACF7D2B5ADE9500EB4343 /* AirDataNetwork */,
 				6A60827B2B5E5DF3005C0ECB /* Data */,
+				6AC088532B879C9E0098852A /* Routing */,
 			);
 			productName = AirDataNetworkDemo;
 			productReference = 6AB23F442B5AC02B0010BE00 /* AirDataNetworkDemo.app */;
@@ -652,6 +657,10 @@
 		6A97A3682B5ADA8700FB148E /* Models */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Models;
+		};
+		6AC088532B879C9E0098852A /* Routing */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Routing;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

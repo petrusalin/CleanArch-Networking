@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Data
+import Routing
 import Presentation
 
 @main
@@ -18,14 +19,14 @@ struct AirDataNetworkDemoApp: App {
                 Group {
                     PostsListView(viewModel: PostsViewModel(repository: RemotePostRepository()))
                         .navigationWithTitle("Posts")
-                        .register(routingPair: RoutingPairProvider.postsPair())
+                        .setupCoordinator(withRoutingPair: RoutingPairProvider.postsPair())
                         .tint(.white)
                         .tabItem {
                             Label("Posts", systemImage: "list.bullet.clipboard.fill")
                         }
                     AccountViewFactory().view(forRoute: .main)
                         .navigationTitle("Account")
-                        .register(routingPair: RoutingPairProvider.accountsPair())
+                        .setupCoordinator(withRoutingPair: RoutingPairProvider.accountsPair())
                         .tint(.white)
                         .tabItem {
                             Label("Account", systemImage: "person.crop.circle")

@@ -5,6 +5,7 @@
 //  Created by Alin Petrus on 21.02.2024.
 //
 
+import Routing
 import SwiftUI
 
 struct AccountView: View {

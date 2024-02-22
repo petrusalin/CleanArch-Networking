@@ -5,6 +5,7 @@
 //  Created by Alin Petrus on 19.02.2024.
 //
 
+import Routing
 import SwiftUI
 
 struct DummyView: View {

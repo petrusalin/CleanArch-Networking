@@ -6,15 +6,16 @@
 //
 
 import Foundation
+import Routing
 import SwiftUI
 
 public enum RoutingPairProvider {
     
-    public static func postsPair() -> RoutingPair<Route.Posts, PostsViewFactory> {
+    public static func postsPair() -> RoutingPair<Route.Posts, PostsRouter, PostsViewFactory> {
         RoutingPair(router: PostsRouter(), factory: PostsViewFactory())
     }
     
-    public static func accountsPair() -> RoutingPair<Route.AccountSettings, AccountViewFactory> {
+    public static func accountsPair() -> RoutingPair<Route.AccountSettings, AccountRouter, AccountViewFactory> {
         RoutingPair(router: AccountRouter(), factory: AccountViewFactory())
     }
     

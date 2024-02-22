@@ -6,27 +6,21 @@
 //
 
 import Foundation
+import Routing
 import SwiftUI
 
-public final class PostsRouter: ConcreteRouter<Route.Posts> {
+public final class PostsRouter: CompositeRouter<Route.Posts> {
     
-    public convenience init() {
-        self.init(navigationPath: NavigationPath())
+    convenience public init() {
+        self.init(stackRouter: StackRouter(), modalRouter: ModalRouter())
     }
     
     public override func go(to route: Route.Posts) {
         if route == .add {
-            self.sheetRoute = route
+            self.modalRouter.go(to: .add)
         } else {
-            self.push(route: route)
+            self.stackRouter.go(to: route)
         }
     }
     
-    public override func goBack() {
-        if self.sheetRoute != nil {
-            self.dismiss()
-        } else {
-            self.pop()
-        }
-    }
 }

@@ -6,6 +6,7 @@
 //
 
 import Domain
+import Routing
 import SwiftUI
 
 public struct PostsListView: View {
