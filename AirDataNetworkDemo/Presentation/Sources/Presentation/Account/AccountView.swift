@@ -10,7 +10,6 @@ import SwiftUI
 
 struct AccountView: View {
     @EnvironmentObject var coordinantor: Coordinator<Route.AccountSettings>
-    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         List {
@@ -34,12 +33,5 @@ struct AccountView: View {
             }
         }
         .navigationWithTitle("Account")
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button("Cancel") {
-                    self.dismiss()
-                }
-            }
-        }
     }
 }

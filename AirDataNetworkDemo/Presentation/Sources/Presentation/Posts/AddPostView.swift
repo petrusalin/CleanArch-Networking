@@ -5,12 +5,13 @@
 //  Created by Alin Petrus on 21.02.2024.
 //
 
+import Routing
 import SwiftUI
 
 struct AddPostView: View {
     @State var title: String = ""
     @State var bodyText: String = ""
-    @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject var coordinantor: Coordinator<Route.Posts>
     
     var body: some View {
         Form {
@@ -21,21 +22,15 @@ struct AddPostView: View {
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button("Cancel") {
-                    dismiss()
+                    coordinantor.goBack()
                 }
             }
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Save") {
-                    dismiss()
+                    coordinantor.goBack()
                 }
             }
         }
         .tint(.white)
-    }
-}
-
-#Preview {
-    NavigationStack {
-        AddPostView()
     }
 }
