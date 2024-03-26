@@ -1,13 +1,13 @@
 //
-//  ModalRouter.swift
-//  
+//  SheetRouter.swift
 //
-//  Created by Alin Petrus on 18.03.2024.
+//
+//  Created by Alin Petrus on 22.02.2024.
 //
 
 import Foundation
 
-public final class ModalRouter<NavigationRoute: Routable>: Router {
+public final class SheetRouter<NavigationRoute: Routable>: Router {
     
     @Published public var route: NavigationRoute?
     

@@ -20,7 +20,7 @@ struct AccountView: View {
             .frame(maxWidth: .infinity)
             .background(.white)
             .onTapGesture {
-                self.coordinantor.go(to: .profile)
+                self.coordinantor.navigate(to: .profile)
             }
             HStack {
                 Text("Security")
@@ -29,7 +29,7 @@ struct AccountView: View {
             .frame(maxWidth: .infinity)
             .background(.white)
             .onTapGesture {
-                self.coordinantor.go(to: .security)
+                self.coordinantor.navigate(to: .security)
             }
         }
         .navigationWithTitle("Account")

@@ -12,14 +12,16 @@ import SwiftUI
 public final class PostsRouter: CompositeRouter<Route.Posts> {
     
     convenience public init() {
-        self.init(stackRouter: StackRouter(), modalRouter: ModalRouter())
+        self.init(stackRouter: StackRouter(), 
+                  sheetRouter: SheetRouter(),
+                  modalRouter: ModalRouter())
     }
     
-    public override func go(to route: Route.Posts) {
+    public override func navigate(to route: Route.Posts) {
         if route == .add {
-            self.modalRouter.go(to: .add)
+            self.sheetRouter.navigate(to: .add)
         } else {
-            self.stackRouter.go(to: route)
+            self.stackRouter.navigate(to: route)
         }
     }
     

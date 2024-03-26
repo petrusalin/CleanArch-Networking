@@ -13,6 +13,9 @@ public extension View {
         if let stack = pair.router as? StackRouter<Route> {
             NavigationRouterView(router: stack, viewFactory: pair.factory, content: { self })
                 .environmentObject(stack.asCoordinator())
+        } else if let sheet = pair.router as? SheetRouter<Route> {
+            SheetRouterView(router: sheet, viewFactory: pair.factory, content: { self })
+                .environmentObject(sheet.asCoordinator())
         } else if let modal = pair.router as? ModalRouter<Route> {
             ModalRouterView(router: modal, viewFactory: pair.factory, content: { self })
                 .environmentObject(modal.asCoordinator())

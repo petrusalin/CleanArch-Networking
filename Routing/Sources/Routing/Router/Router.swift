@@ -10,9 +10,9 @@ import Foundation
 public protocol Router<NavigationRoute>: ObservableObject {
     associatedtype NavigationRoute: Routable
     
-    func go(to route: NavigationRoute)
+    func navigate(to route: NavigationRoute)
     
-    func goBack()
+    func navigateBack()
     
-    func reset()
+    func navigateToRoot()
 }

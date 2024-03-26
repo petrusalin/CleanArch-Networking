@@ -12,11 +12,11 @@ public final class PostDetailsViewModel: ObservableObject {
     @Published private(set) var postEntity: PostEntity
     
     var title: String {
-        postEntity.title
+        self.postEntity.title
     }
     
     var body: String {
-        postEntity.body
+        self.postEntity.body
     }
     
     public init(postEntity: PostEntity) {

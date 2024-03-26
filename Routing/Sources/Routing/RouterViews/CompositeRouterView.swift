@@ -13,10 +13,12 @@ public struct CompositeRouterView<Route: Routable, Factory: ViewFactory<Route>, 
     private let content: () -> Content
     
     public var body: some View {
-        ModalRouterView(router: router.modalRouter, viewFactory: viewFactory) {
-            NavigationRouterView(router: router.stackRouter,
-                                 viewFactory: viewFactory,
-                                 content: content)
+        SheetRouterView(router: router.sheetRouter, viewFactory: viewFactory) {
+            ModalRouterView(router: router.modalRouter, viewFactory: viewFactory) {
+                NavigationRouterView(router: router.stackRouter,
+                                     viewFactory: viewFactory,
+                                     content: content)
+            }
         }
     }
     

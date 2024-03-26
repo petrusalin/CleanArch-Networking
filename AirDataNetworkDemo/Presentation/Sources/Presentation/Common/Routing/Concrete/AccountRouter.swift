@@ -12,7 +12,9 @@ import SwiftUI
 public final class AccountRouter: CompositeRouter<Route.AccountSettings> {
     
     convenience public init() {
-        self.init(stackRouter: StackRouter(), modalRouter: ModalRouter())
+        self.init(stackRouter: StackRouter(), 
+                  sheetRouter: SheetRouter(),
+                  modalRouter: ModalRouter())
     }
     
 }

@@ -13,20 +13,20 @@ public final class Coordinator<Route: Routable>: Router, ObservableObject {
     private let resetBlock: () -> Void
     
     init<R: Router<Route>>(router: R) {
-        self.goToRouteBlock = router.go(to:)
-        self.goBackBlock = router.goBack
-        self.resetBlock = router.reset
+        self.goToRouteBlock = router.navigate(to:)
+        self.goBackBlock = router.navigateBack
+        self.resetBlock = router.navigateToRoot
     }
     
-    public func go(to route: Route) {
+    public func navigate(to route: Route) {
         self.goToRouteBlock(route)
     }
     
-    public func goBack() {
+    public func navigateBack() {
         self.goBackBlock()
     }
     
-    public func reset() {
+    public func navigateToRoot() {
         self.resetBlock()
     }
 }

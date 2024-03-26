@@ -35,7 +35,7 @@ struct SecurityView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Save") {
-                    coordinantor.goBack()
+                    coordinantor.navigateBack()
                 }
             }
         }

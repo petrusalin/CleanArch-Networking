@@ -35,11 +35,11 @@ public struct PostDetailsView: View {
             Spacer()
                 .frame(height: 50)
             Button("Pop") {
-                self.coordinator.goBack()
+                self.coordinator.navigateBack()
             }
             .tint(.orange)
             Button("Dummy") {
-                self.coordinator.go(to: .dummy)
+                self.coordinator.navigate(to: .dummy)
             }
             .tint(.orange)
             Spacer()

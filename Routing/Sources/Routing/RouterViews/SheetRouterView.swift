@@ -1,25 +1,25 @@
 //
-//  ModalRouterView.swift
-//  
+//  SheetRouterView.swift
 //
-//  Created by Alin Petrus on 18.03.2024.
+//
+//  Created by Alin Petrus on 22.02.2024.
 //
 
 import SwiftUI
 
-public struct ModalRouterView<Route: Routable, Factory: ViewFactory<Route>, Content: View>: View {
-    @ObservedObject private var router: ModalRouter<Route>
+public struct SheetRouterView<Route: Routable, Factory: ViewFactory<Route>, Content: View>: View {
+    @ObservedObject private var router: SheetRouter<Route>
     private let viewFactory: Factory
     private let content: () -> Content
     
     public var body: some View {
         content()
-            .fullScreenCover(item: self.$router.route) { route in
+            .sheet(item: self.$router.route) { route in
                 self.viewFactory.view(forRoute: route)
             }
     }
     
-    public init(router: ModalRouter<Route>,
+    public init(router: SheetRouter<Route>,
                 viewFactory: Factory,
                 content: @escaping () -> Content) {
         self.router = router

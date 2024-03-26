@@ -22,12 +22,12 @@ struct AddPostView: View {
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button("Cancel") {
-                    coordinantor.goBack()
+                    coordinantor.navigateBack()
                 }
             }
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Save") {
-                    coordinantor.goBack()
+                    coordinantor.navigateBack()
                 }
             }
         }

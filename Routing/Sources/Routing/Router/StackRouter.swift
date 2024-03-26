@@ -16,15 +16,15 @@ public final class StackRouter<NavigationRoute: Routable>: Router {
         self.navigationPath = navigationPath
     }
     
-    public func go(to route: NavigationRoute) {
+    public func navigate(to route: NavigationRoute) {
         self.navigationPath.append(route)
     }
     
-    public func goBack() {
+    public func navigateBack() {
         self.navigationPath.removeLast()
     }
     
-    public func reset() {
+    public func navigateToRoot() {
         self.navigationPath = NavigationPath()
     }
     

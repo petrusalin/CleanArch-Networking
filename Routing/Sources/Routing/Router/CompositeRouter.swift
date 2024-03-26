@@ -9,34 +9,45 @@ import Foundation
 import Combine
 import SwiftUI
 
+// Sublass and override `navigate(to:)` to have a complex router
 open class CompositeRouter<NavigationRoute: Routable>: Router {
     public let stackRouter: StackRouter<NavigationRoute>
+    public let sheetRouter: SheetRouter<NavigationRoute>
     public let modalRouter: ModalRouter<NavigationRoute>
     
     public init(stackRouter: StackRouter<NavigationRoute>,
+                sheetRouter: SheetRouter<NavigationRoute>,
                 modalRouter: ModalRouter<NavigationRoute>) {
         self.stackRouter = stackRouter
+        self.sheetRouter = sheetRouter
         self.modalRouter = modalRouter
     }
     
     // override
-    open func go(to route: NavigationRoute) {
-        self.stackRouter.go(to: route)
+    open func navigate(to route: NavigationRoute) {
+        self.stackRouter.navigate(to: route)
     }
     
-    public func goBack() {
-        if self.modalRouter.sheetRoute != nil {
-            self.modalRouter.goBack()
+    public func navigateBack() {
+        if self.modalRouter.route != nil {
+            self.modalRouter.navigateBack()
+        } else if self.sheetRouter.route != nil {
+            self.sheetRouter.navigateBack()
         } else {
-            self.stackRouter.goBack()
+            self.stackRouter.navigateBack()
         }
     }
     
-    public func reset() {
-        if self.modalRouter.sheetRoute != nil {
-            self.modalRouter.reset()
+    public func navigateToRoot() {
+        if self.sheetRouter.route != nil {
+            self.sheetRouter.navigateToRoot()
         }
-        self.stackRouter.reset()
+        
+        if self.modalRouter.route != nil {
+            self.modalRouter.navigateToRoot()
+        }
+        
+        self.stackRouter.navigateToRoot()
     }
     
 }

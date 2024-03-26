@@ -17,7 +17,7 @@ struct DummyView: View {
             HStack {
                 Spacer()
                 Button("Pop to Root") {
-                    self.coordinantor.reset()
+                    self.coordinantor.navigateToRoot()
                 }
                 .tint(.orange)
                 Spacer()

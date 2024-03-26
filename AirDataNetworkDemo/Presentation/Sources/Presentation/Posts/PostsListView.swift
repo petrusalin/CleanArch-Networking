@@ -20,7 +20,7 @@ public struct PostsListView: View {
                     ForEach(viewModel.posts) { post in
                         PostCellView(post: post)
                             .onTapGesture {
-                                self.coordinator.go(to: .detail(post: post))
+                                self.coordinator.navigate(to: .detail(post: post))
                             }
                     }
                     .padding()
@@ -31,7 +31,7 @@ public struct PostsListView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
-                    self.coordinator.go(to: .add)
+                    self.coordinator.navigate(to: .add)
                 } label: {
                     Image(systemName: "plus.circle.fill")
                 }
