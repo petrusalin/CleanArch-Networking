@@ -19,20 +19,21 @@ extension JSONEncoder: AnyEncoder {}
 
 extension PropertyListEncoder: AnyEncoder {}
 
-extension Encodable {
+public extension Encodable {
     
-    public func encoded(using encoder: AnyEncoder = JSONEncoder()) throws -> Data {
-        return try encoder.encode(self)
+    func encoded(using encoder: AnyEncoder = JSONEncoder()) throws -> Data {
+        try encoder.encode(self)
     }
     
 }
 
-extension Encodable {
+public extension Encodable {
     
-    public func asDictionary(using encoder: AnyEncoder = JSONEncoder()) throws -> [String: Any] {
+    func asDictionary(using encoder: AnyEncoder = JSONEncoder()) throws -> [String: Any] {
         let data = try self.encoded(using: encoder)
         
-        guard let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] else {
+        guard let dictionary = try JSONSerialization.jsonObject(with: data, 
+                                                                options: .allowFragments) as? [String: Any] else {
             throw EncodingError.dictionaryConversionError
         }
         

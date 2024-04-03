@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import OSLog
 
-public final class URLBuilderImpl: URLBuilder {
+public struct URLBuilderImpl: URLBuilder {
     private var basePath: String?
     private var endpoint: String?
     private var queryParameters: [String: Any] = [:]
@@ -17,46 +18,55 @@ public final class URLBuilderImpl: URLBuilder {
     // MARK: - Public
     
     public func with(basePath: String) -> Self {
-        self.basePath = basePath
+        var copy = self
+        copy.basePath = basePath
         
-        return self
+        return copy
     }
     
     public func with(endPointPath: String) -> Self {
-        self.endpoint = endPointPath
+        var copy = self
+        copy.endpoint = endPointPath
         
-        return self
+        return copy
     }
     
     public func with(queryParameterKey key: String, parameterValue: Any) -> Self {
-        self.queryParameters[key] = parameterValue
+        var copy = self
+        copy.queryParameters[key] = parameterValue
         
-        return self
+        return copy
     }
     
     public func with(queryParameters: [String: Any]) -> Self {
-        queryParameters.forEach { (key, value) in
-            self.queryParameters[key] = value
+        var copy = self
+        queryParameters.forEach { key, value in
+            copy.queryParameters[key] = value
         }
         
-        return self
+        return copy
     }
     
     public func build() throws -> URL {
         guard let basePath, let endpoint,
-                let baseUrl = URL(string: basePath),
-              let url = URL(string: endpoint, relativeTo: baseUrl) else {
+              let baseUrl = URL(string: basePath) else {
             throw NetworkError.badResourcePath
         }
-       
+        
+        let url = baseUrl.appending(path: endpoint)
+        
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
-        components?.queryItems = try self.queryItems()
+        let queryItems = try self.queryItems()
+        
+        if !queryItems.isEmpty {
+            components?.queryItems = queryItems
+        }
         
         guard let completeUrl = components?.url else {
             throw NetworkError.badUrl
         }
         
-        self.reset()
+        Logger.networkLogger.debug("Built url: \(completeUrl)")
         
         return completeUrl
     }
@@ -77,12 +87,6 @@ public final class URLBuilderImpl: URLBuilder {
                 throw NetworkError.queryCreation
             }
         }
-    }
-    
-    private func reset() {
-        self.basePath = nil
-        self.endpoint = nil
-        self.queryParameters = [:]
     }
     
 }

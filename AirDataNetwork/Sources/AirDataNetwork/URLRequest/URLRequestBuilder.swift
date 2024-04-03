@@ -19,16 +19,16 @@ public protocol URLRequestBuilder {
     func build() throws -> URLRequest
 }
 
-extension URLRequestBuilder {
+public extension URLRequestBuilder {
     
-    public func urlRequest(forRequestable requestable: Requestable,
-                           basePath: String,
-                           urlBuilder: URLBuilder,
-                           headers: [String: String]) throws -> URLRequest {
+    func urlRequest(forRequestable requestable: Requestable,
+                    basePath: String,
+                    urlBuilder: URLBuilder,
+                    headers: [String: String]) throws -> URLRequest {
         try self
             .with(url: try urlBuilder.url(forRequestable: requestable, basePath: basePath))
             .with(method: requestable.method)
-            .with(headerKey: "Content-Type", headerValue: requestable.contentType)
+            .with(headerKey: "Content-Type", headerValue: requestable.contentType.rawValue)
             .with(headers: headers)
             .with(body: try requestable.bodyParameters?.encoded(using: requestable.encoder))
             .with(configuration: requestable.configuration)

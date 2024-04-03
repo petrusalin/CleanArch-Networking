@@ -27,18 +27,18 @@ extension JSONDecoder: AnyDecoder {
     
 }
 
-extension Data {
+public extension Data {
     
-    public func decoded<T: Decodable>(using decoder: AnyDecoder = JSONDecoder()) throws -> T {
-        return try decoder.decode(data: self)
+    func decoded<T: Decodable>(using decoder: AnyDecoder = JSONDecoder()) throws -> T {
+        try decoder.decode(data: self)
     }
     
 }
 
-extension Decodable {
+public extension Decodable {
     
-    public static func fromDictionary(_ dictionary: [String: Any], 
-                                      using decoder: AnyDecoder = JSONDecoder()) throws -> Self {
+    static func fromDictionary(_ dictionary: [String: Any],
+                               using decoder: AnyDecoder = JSONDecoder()) throws -> Self {
         let data = try JSONSerialization.data(withJSONObject: dictionary, options: [.fragmentsAllowed])
         
         return try data.decoded(using: decoder)

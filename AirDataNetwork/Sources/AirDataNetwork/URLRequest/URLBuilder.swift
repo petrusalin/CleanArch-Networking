@@ -18,9 +18,9 @@ public protocol URLBuilder {
     
 }
 
-extension URLBuilder {
+public extension URLBuilder {
     
-    public func url(forRequestable requestable: Requestable, basePath: String) throws -> URL {
+    func url(forRequestable requestable: Requestable, basePath: String) throws -> URL {
         try self
             .with(basePath: basePath)
             .with(endPointPath: requestable.path)

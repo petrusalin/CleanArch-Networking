@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import OSLog
 
-public final class URLRequestBuilderImpl: URLRequestBuilder {
+public struct URLRequestBuilderImpl: URLRequestBuilder {
     private var url: URL?
     private var method: HTTPMethod?
     private var headers: [String: String] = [:]
@@ -19,41 +20,47 @@ public final class URLRequestBuilderImpl: URLRequestBuilder {
     // MARK: - Public
     
     public func with(url: URL) -> Self {
-        self.url = url
+        var copy = self
+        copy.url = url
         
-        return self
+        return copy
     }
     
     public func with(method: HTTPMethod) -> Self {
-        self.method = method
+        var copy = self
+        copy.method = method
         
-        return self
+        return copy
     }
     
     public func with(headerKey: String, headerValue: String) -> Self {
-        self.headers[headerKey] = headerValue
+        var copy = self
+        copy.headers[headerKey] = headerValue
         
-        return self
+        return copy
     }
     
     public func with(headers: [String: String]) -> Self {
-        headers.forEach { (key, value) in
-            self.headers[key] = value
+        var copy = self
+        headers.forEach { key, value in
+            copy.headers[key] = value
         }
         
-        return self
+        return copy
     }
     
     public func with(body: Data?) -> Self {
-        self.body = body
+        var copy = self
+        copy.body = body
         
-        return self
+        return copy
     }
     
     public func with(configuration: URLRequestConfiguration) -> Self {
-        self.configuration = configuration
+        var copy = self
+        copy.configuration = configuration
         
-        return self
+        return copy
     }
     
     public func build() throws -> URLRequest {
@@ -62,32 +69,28 @@ public final class URLRequestBuilderImpl: URLRequestBuilder {
         }
         
         var urlRequest = URLRequest(url: url)
-        urlRequest.httpBody = body
+        urlRequest.httpBody = self.body
+        
+        self.headers.forEach { key, value in
+            urlRequest.setValue(value, forHTTPHeaderField: key)
+        }
         
         if urlRequest.value(forHTTPHeaderField: "Content-Type") == nil {
-            urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            urlRequest.setValue(HTTPContentType.json.rawValue, forHTTPHeaderField: "Content-Type")
         }
         
         if urlRequest.value(forHTTPHeaderField: "Accept") == nil {
-            urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
+            urlRequest.setValue(HTTPContentType.json.rawValue, forHTTPHeaderField: "Accept")
         }
         
         self.configureRequest(&urlRequest)
         
-        self.reset()
+        Logger.networkLogger.debug("Built url request: \(urlRequest)")
         
         return urlRequest
     }
     
     // MARK: - Private
-    
-    private func reset() {
-        self.url = nil
-        self.method = nil
-        self.headers = [:]
-        self.body = nil
-        self.configuration = URLRequestConfigurationImpl()
-    }
     
     private func configureRequest(_ urlRequest: inout URLRequest) {
         urlRequest.timeoutInterval = configuration.timeoutInterval

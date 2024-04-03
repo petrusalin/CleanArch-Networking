@@ -8,8 +8,6 @@
 import Foundation
 
 public struct URLRequestOptions: OptionSet {
-    public let rawValue: Int
-    
     public static let allowsCellularAccess = Self(rawValue: 1 << 0)
     public static let allowsConstrainedNetworkAccess = Self(rawValue: 1 << 1)
     public static let allowsExpensiveNetworkAccess = Self(rawValue: 1 << 2)
@@ -17,9 +15,15 @@ public struct URLRequestOptions: OptionSet {
     public static let httpShouldHandleCookies = Self(rawValue: 1 << 4)
     public static let httpShouldUsePipelining = Self(rawValue: 1 << 5)
     
-    public static let standard: Self = [allowsCellularAccess, .allowsConstrainedNetworkAccess, .allowsExpensiveNetworkAccess]
+    public let rawValue: Int
     
     public init(rawValue: Int) {
         self.rawValue = rawValue
     }
+}
+
+public extension URLRequestOptions {
+    static let standard: Self = [allowsCellularAccess,
+                                 .allowsConstrainedNetworkAccess,
+                                 .allowsExpensiveNetworkAccess]
 }
