@@ -12,7 +12,7 @@ import Models
 public class PostsAPIImpl: PostAPI {
     private let networkEngine: NetworkEngine
     
-    public init(networkEngine: NetworkEngine = NetworkEngineImpl(basePath: "https://jsonplaceholder.typicode.com")) {
+    public init(networkEngine: NetworkEngine = NetworkEngineImpl(serverURL: "https://jsonplaceholder.typicode.com")) {
         self.networkEngine = networkEngine
     }
     

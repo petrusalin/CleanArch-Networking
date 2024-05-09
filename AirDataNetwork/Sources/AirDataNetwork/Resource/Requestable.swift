@@ -44,7 +44,6 @@ public extension Requestable {
         if self.decoder is JSONDecoder {
             return .json
         } else {
-            Logger.networkLogger.fault("Add content type to support content type: \(self.contentType.rawValue)")
             fatalError("Add contentType support for decoder \(self.decoder)")
         }
     }

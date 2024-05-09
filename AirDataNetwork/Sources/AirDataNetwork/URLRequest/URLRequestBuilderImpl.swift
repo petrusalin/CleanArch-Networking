@@ -69,6 +69,7 @@ public struct URLRequestBuilderImpl: URLRequestBuilder {
         }
         
         var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = self.method?.rawValue
         urlRequest.httpBody = self.body
         
         self.headers.forEach { key, value in
@@ -84,8 +85,6 @@ public struct URLRequestBuilderImpl: URLRequestBuilder {
         }
         
         self.configureRequest(&urlRequest)
-        
-        Logger.networkLogger.debug("Built url request: \(urlRequest)")
         
         return urlRequest
     }

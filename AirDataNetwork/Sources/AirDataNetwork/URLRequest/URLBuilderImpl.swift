@@ -66,8 +66,6 @@ public struct URLBuilderImpl: URLBuilder {
             throw NetworkError.badUrl
         }
         
-        Logger.networkLogger.debug("Built url: \(completeUrl)")
-        
         return completeUrl
     }
     

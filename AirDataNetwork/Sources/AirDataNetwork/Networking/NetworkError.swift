@@ -8,9 +8,13 @@
 import Foundation
 
 public enum NetworkError: Error {
+    case generic
     case internalServerError
     case noDataConnection
     case badResourcePath
+    case badInput
+    case invalidResponse
+    case cancelled
     case missingUrl
     case badUrl
     case queryCreation
